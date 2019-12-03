@@ -1,0 +1,43 @@
+Você receberá um arquivo com o formato csv contendo alguns personagens de quadrinhos e/ou desenhos animados e você deverá realizar as alterações que foram solicitadas abaixo pelo cliente.
+1.	Selecione todos os registros.
+//db.herois.find().pretty()
+
+2.	Selecione apenas o primeiro registro.
+//db.herois.findOne()
+
+3.	Selecione todos os registros em que o nome seja igual a ‘Shrek’ ou a quantidade de gatos seja igual a 2.
+//db.herois.find({$or: [{"Nome": "Shrek"}, {"Qtd Gatos": 2}]}).pretty()
+
+4.	Selecione todos os registros em que o local de nascimento seja igual a Roma e necessariamente que a quantidade de cachorros seja igual a 3.
+//db.herois.find({"Qtd Cachorros" : 3, "Local": "Roma"}).pretty()
+
+5.	Selecione todos os registros em que a quantidade de gatos seja igual a 3 ou a quantidade de cachorros seja igual a 6.
+//db.herois.find({$or: [{"Qtd Gatos": 3}, {"Qtd Cachorros": 6}]}).pretty()
+
+6.	Selecione todos os registros em que o nome comece com C.
+//db.herois.find({"Nome": /^C/i}).pretty()
+
+7.	Selecione todos os registros em que o nome comece com H.
+//db.herois.find({"Nome": /^H/i}).pretty()
+
+8.	Selecione todos os registros em que o nome termine com a.
+//db.herois.find({"Nome": /A$/i}).pretty()
+
+9.	Selecione todos os registros em que o nome contenha s.
+//db.herois.find({"Nome": /s/}).pretty()
+
+10.	Selecione todos os registros em que o nome contenha ‘e’ ou ‘o’.
+//db.herois.find({$or: [{"Nome" : /e/}, {"Nome" : /o/}]}).pretty()
+
+11.	Insira 3 novos super-heróis.
+//db.herois.insert([{"Ordem":"15", "Nome":"Arthur Foschiani", "Data Nascimento":"21/12/2003", "Local":"São Paulo", "Qtd Gatos":"0", "Qtd Cachorros":"0"}, {"Ordem":"16", "Nome":"Matheus Amaral", "Data Nascimento":"15/08/1997", "Local":"Rio de Janeiro", "Qtd Gatos":"1", "Qtd Cachorros":"0"}, {"Ordem":"17", "Nome":"Cássio Azevedo", "Data Nascimento":"26/11/2000", "Local":"Nova Iorque", "Qtd Gatos":"0", "Qtd Cachorros":"0"}])
+
+12.	Delete 1 super-herói em que o nome seja igual a Thor.
+//db.herois.remove({"Nome": "Thor"})
+
+13.	Atualize a quantidade de gatos em que o usuário com o registro de nome ‘Thor’ possui. Atualize a quantidade de gatos de ‘0’ para ‘7’.
+//db.herois.update({"_id": ObjectId("5de665445d087fb61f02b9bb")}, {$set: {"Qtd Gatos" : "2"}})
+
+14.	Selecione todos os registros que foram trabalhados e exporte para um arquivo JSON.
+//
+
